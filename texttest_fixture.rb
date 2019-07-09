@@ -16,18 +16,4 @@ items = [
   Item.new(name='Conjured Mana Cake', sell_in=3, quality=6), # <-- :O
 ]
 
-days = 2
-if ARGV.size > 0
-  days = ARGV[0].to_i + 1
-end
-
-gilded_rose = GildedRose.new items
-(0...days).each do |day|
-  puts "-------- day #{day} --------"
-  puts 'name, sellIn, quality'
-  items.each do |item|
-    puts item
-  end
-  puts ''
-  gilded_rose.update_quality
-end
+$gilded_rose = GildedRose.new items
